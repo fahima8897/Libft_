@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <string.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -25,14 +24,4 @@ char	*ft_strrchr(const char *s, int c)
 		i--;
 	}
 	return (NULL);
-}
-
-#include <stdio.h>
-#include <string.h>
-
-int main()
-{
-    char *tab = "hello";
-    printf("%s\n", ft_strrchr(tab, 'l'));
-    printf("%s\n", strrchr(tab, 'l'));
 }
