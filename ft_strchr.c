@@ -6,7 +6,7 @@
 /*   By: fboumell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 10:39:31 by fboumell          #+#    #+#             */
-/*   Updated: 2021/05/24 10:44:07 by fboumell         ###   ########.fr       */
+/*   Updated: 2021/05/28 17:25:48 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != '\0' && *s != c)
+	while (*s  && *s != c)
 		s++;
 	if (*s == c)
 		return ((char *)s);
