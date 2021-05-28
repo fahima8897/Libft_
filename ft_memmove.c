@@ -31,3 +31,20 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+
+#include <string.h>
+#include <stdio.h>
+
+int main()
+{
+    char s[] = "bonjour le monde";
+    char d[50] = "42";
+    ft_memmove(d, s+1, 7);
+    printf("%s\n", d);
+    memmove(d, s+1, 7);
+    printf("%s\n", d);
+	memcpy(d, s+1, 7);
+	printf("%s", d);
+//ft_memcpy(d+1, s, 8);
+//printf("%s", d);
+}

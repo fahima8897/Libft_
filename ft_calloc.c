@@ -6,7 +6,7 @@
 /*   By: fboumell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 16:24:38 by fboumell          #+#    #+#             */
-/*   Updated: 2021/05/26 17:01:05 by fboumell         ###   ########.fr       */
+/*   Updated: 2021/05/28 12:15:50 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,16 @@
 /* comme malloc elle sert a allouer de la memeoire mais la 
  difference c'est qu'elle initialise a 0 tous les elements 
  de la zone memoire. 
- nmemb = nombre d'elements qu'on souhaite stocker
+ count = nombre d'elements qu'on souhaite stocker
  size = taille de ces elements */
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
 	void	*s;
 
-	if (!(s = (void *)calloc(sizeof(void) * nmemb
+	s = (void *)malloc(size * count);
+	if (!s)
+		return (NULL);
+	ft_bzero(s, count);
+	return (s);
 }
