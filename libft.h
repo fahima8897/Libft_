@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <unistd.h>
 
 size_t	ft_strlen(const char *s);
 int		ft_isalpha(int c);
@@ -39,5 +40,9 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s);
+void	ft_putchar_fd(char c, int fd);
+void 	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 #endif
