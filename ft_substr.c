@@ -24,11 +24,12 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
     i = 0;
     j = 0;
     length = ft_strlen(src);
-    new = (char *)malloc(sizeof(char) * (len + 1));
-    if (!new)
+    if (!(new = (char *)malloc(sizeof(char) * (len + 1))))
         return (NULL);
-    if (start > length)
+    if (src == 0)
         return (NULL);
+   if (start >= length)
+	return (ft_strdup(""));
     while (src[i] && i < length && j < len)
     {
         while (i != start)
@@ -41,4 +42,5 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
     }
     new[j] = '\0';
     return (new);
-}   
+}
+
