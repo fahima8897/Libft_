@@ -16,6 +16,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+typedef	struct	s_list
+{
+	void	*content;
+	struct	s_list	*next;
+}		t_list;
+
 size_t	ft_strlen(const char *s);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -47,5 +53,6 @@ void	ft_putnbr_fd(int n, int fd);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
+t_list	*ft_lstnew(void *content);
 
 #endif
