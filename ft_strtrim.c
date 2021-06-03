@@ -6,21 +6,21 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 15:06:30 by marvin            #+#    #+#             */
-/*   Updated: 2021/05/31 15:06:32 by marvin           ###   ########.fr       */
+/*   Updated: 2021/06/03 10:23:42 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
- 	char *s2;
-	int len;
-	int i;
-	int j;
+ 	char	*s2;
+	int		len;
+	int		i;
+	int		j;
 
 	if (!s1)
-		return(NULL);
+		return (NULL);
 	len = ft_strlen((char *)s1);
 	if (!(s2 = (char *)malloc(sizeof(char)* len + 1)))
 		return (NULL);
@@ -34,7 +34,7 @@ char    *ft_strtrim(char const *s1, char const *set)
 			i++;
 		}
 	}
-    return (s1);
+	return (s1);
 }
 
 #include <stdio.h>
@@ -45,5 +45,3 @@ int main()
 	char set[] = "eo";
 	printf("%s", ft_strtrim(s1, set));
 }
-
-
