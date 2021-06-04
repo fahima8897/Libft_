@@ -6,18 +6,17 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 16:50:53 by marvin            #+#    #+#             */
-/*   Updated: 2021/06/01 16:53:04 by marvin           ###   ########.fr       */
+/*   Updated: 2021/06/04 10:44:45 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_itoa(int i)
+char	*ft_itoa(int i)
 {
-	char *new;
+	char	*new;
 
-	if (!(new = malloc(sizeof(char) * 
-		return 	(NULL);
-	
-    
+	new = malloc(sizeof(char) *);
+	if (!new)
+		return (NULL);
 }

@@ -6,13 +6,13 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 15:06:23 by marvin            #+#    #+#             */
-/*   Updated: 2021/06/03 13:02:40 by fboumell         ###   ########.fr       */
+/*   Updated: 2021/06/04 10:42:04 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *s1, char const *s2)
+static char	*ft_strcpy(char *s1, char const *s2)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ char	*ft_strcpy(char *s1, char const *s2)
 	return (s1);
 }
 
-char	*ft_strcat(char *s1, char const *s2)
+static char	*ft_strcat(char *s1, char const *s2)
 {
 	int	i;
 	int	j;
