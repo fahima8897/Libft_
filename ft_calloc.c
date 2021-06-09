@@ -6,7 +6,7 @@
 /*   By: fboumell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 16:24:38 by fboumell          #+#    #+#             */
-/*   Updated: 2021/06/03 13:20:39 by fboumell         ###   ########.fr       */
+/*   Updated: 2021/06/09 14:13:03 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ void	*ft_calloc(size_t count, size_t size)
 	s = (void *)malloc(size * count);
 	if (!s)
 		return (NULL);
-	ft_bzero(s, count);
+	ft_bzero(s, size * count);
 	return (s);
 }
