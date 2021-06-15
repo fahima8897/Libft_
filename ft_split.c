@@ -43,23 +43,22 @@ static void	ft_free(char **tab, int size)
 		while (i < size)
 			free(tab[i]);
 		free(tab);
-		return (NULL);
+		return ;
 	}
 }
 
-static char	**ft_make_words(const char *s, char **tab, int j, int size)
+static char	*ft_make_words(const char *s, char *word, int j, int count_l)
 {
 	int	i;
 
 	i = 0;
-	while (size > 0)
+	while (count_l > 0)
 	{
-		tab[i] = s[k - size]
+		word[i] = s[j - count_l];
 		i++;
-		k--;
-		size--;
+		count_l--;
 	}
-	tab[i] = '\0';
+	word[i] = '\0';
 	return (word);
 }
 
@@ -74,19 +73,16 @@ static	char	**ft_count_letters(char **tab, const char *s, char c, int size)
 	count_l = 0;
 	while (s[j] != '\0' && i < size)
 	{
-		if (s[j] == c)
+		while (s[j] == c)
 			j++;
-		else
+		while (s[j] != '\0' && s[j] != c)
 		{
-			while (s[j] != '\0' && s[j] != c)
-			{
-				count_l++;
-				j++;
-			}
+			count_l++;
+			j++;
 		}
 		tab[i] = malloc(sizeof(char) * (count_l + 1));
 		ft_free(tab, size);
-		ft_make_words(s, tab, j, size);
+		ft_make_words(s, tab[i], j, count_l);
 		count_l = 0;
 		i++;
 	}
@@ -109,10 +105,18 @@ char	**ft_split(char const *s, char c)
 	ft_count_letters(tab, s, c, size);
 	return (tab);
 }
-/*
-#include <stdio.h>
 
-int main()
-{
-	printf("%d", count_words("ahealaloa", 'a'));
-}*/
+#include <stdio.h>
+      int                main(void)
+    {
+        char    **tab;
+        unsigned int    i;
+    
+        i = 0;
+        tab = ft_split("sdsdsdasd", 's');
+        while (tab[i] != NULL)
+        {
+            printf("%s\n", tab[i]);
+            i++;
+        }
+    }
