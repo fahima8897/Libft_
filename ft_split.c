@@ -105,18 +105,3 @@ char	**ft_split(char const *s, char c)
 	ft_count_letters(tab, s, c, size);
 	return (tab);
 }
-
-#include <stdio.h>
-      int                main(void)
-    {
-        char    **tab;
-        unsigned int    i;
-    
-        i = 0;
-        tab = ft_split("sdsdsdasd", 's');
-        while (tab[i] != NULL)
-        {
-            printf("%s\n", tab[i]);
-            i++;
-        }
-    }
