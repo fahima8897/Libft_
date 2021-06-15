@@ -6,7 +6,7 @@
 /*   By: fboumell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 15:04:28 by fboumell          #+#    #+#             */
-/*   Updated: 2021/06/04 16:22:51 by fboumell         ###   ########.fr       */
+/*   Updated: 2021/06/15 13:27:52 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,8 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 char	*ft_itoa(int n);
-char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
-char    **ft_split(char const *s, char c);
-t_list  *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char	**ft_split(char const *s, char c);
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif

@@ -12,9 +12,6 @@
 
 #include "libft.h"
 
-//le nouvel element prend l'adresse du premier pour etre ajouter au debut
-//le pointeur du premier doit prendre l'adresse du nouveau
-
 void	ft_lstadd_front(t_list **alst, t_list *new)
 {
 	new->next = *alst;

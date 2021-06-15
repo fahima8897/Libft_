@@ -12,8 +12,6 @@
 
 #include "libft.h"
 
-//le caractere c doit etre interprete comme unsigned char
-
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*b;
