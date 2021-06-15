@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 11:44:09 by marvin            #+#    #+#             */
-/*   Updated: 2021/06/15 16:47:20 by fboumell         ###   ########.fr       */
+/*   Updated: 2021/06/15 17:10:11 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	ft_count_words(char const *s, char c)
 	return (count);
 }
 
-void	ft_free(char **tab, size)
+static void	ft_free(char **tab, int size)
 {
 	int	i;
 
@@ -44,13 +44,30 @@ void	ft_free(char **tab, size)
 			free(tab[i]);
 		free(tab);
 		return (NULL);
+	}
 }
 
-static char	**ft_count_letters(char **tab, const char *s, char c, int size)
+static char	**ft_make_words(const char *s, char **tab, int j, int size)
 {
 	int	i;
-	int j;
-	int count_l;
+
+	i = 0;
+	while (size > 0)
+	{
+		tab[i] = s[k - size]
+		i++;
+		k--;
+		size--;
+	}
+	tab[i] = '\0';
+	return (word);
+}
+
+static	char	**ft_count_letters(char **tab, const char *s, char c, int size)
+{
+	int		i;
+	int		j;
+	int		count_l;
 
 	i = 0;
 	j = 0;
@@ -62,21 +79,25 @@ static char	**ft_count_letters(char **tab, const char *s, char c, int size)
 		else
 		{
 			while (s[j] != '\0' && s[j] != c)
+			{
 				count_l++;
 				j++;
+			}
 		}
 		tab[i] = malloc(sizeof(char) * (count_l + 1));
 		ft_free(tab, size);
-	
+		ft_make_words(s, tab, j, size);
 		count_l = 0;
 		i++;
 	}
+	tab[i] = 0;
+	return (tab);
 }
 
-char    **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	char **tab;
-	int	size;
+	char	**tab;
+	int		size;
 
 	if (!s)
 		return (NULL);
@@ -88,10 +109,10 @@ char    **ft_split(char const *s, char c)
 	ft_count_letters(tab, s, c, size);
 	return (tab);
 }
-
+/*
 #include <stdio.h>
 
 int main()
 {
 	printf("%d", count_words("ahealaloa", 'a'));
-}
+}*/
