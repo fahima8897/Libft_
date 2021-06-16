@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 11:44:09 by marvin            #+#    #+#             */
-/*   Updated: 2021/06/15 17:10:11 by fboumell         ###   ########.fr       */
+/*   Updated: 2021/06/16 10:10:59 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	ft_count_words(char const *s, char c)
 	return (count);
 }
 
-static void	ft_free(char **tab, int size)
+static char	ft_free(char **tab, int size)
 {
 	int	i;
 
@@ -43,8 +43,8 @@ static void	ft_free(char **tab, int size)
 		while (i < size)
 			free(tab[i]);
 		free(tab);
-		return ;
 	}
+	return (0);
 }
 
 static char	*ft_make_words(const char *s, char *word, int j, int count_l)

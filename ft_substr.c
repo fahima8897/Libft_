@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 08:03:19 by marvin            #+#    #+#             */
-/*   Updated: 2021/06/03 12:52:30 by fboumell         ###   ########.fr       */
+/*   Updated: 2021/06/16 10:49:30 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,29 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*new;
-	unsigned int	i;
+	char	*new;
+	int		i;
 
-	i = 0;
+	new = 0;
 	if (!s)
 		return (NULL);
-	if (!len || start > ft_strlen(s))
-		return (ft_strdup(""));
+	if (start > ft_strlen(s))
+	{
+		new = malloc(sizeof(char) * 1);
+		if (!new)
+			return (NULL);
+		new[0] = '\0';
+		return (new);
+	}
 	if (len > ft_strlen(&s[start]))
-		new = malloc(sizeof(char) * (ft_strlen(&s[start] + 1)));
+		new = malloc(sizeof(char) * ft_strlen(&s[start]) + 1);
 	else
-		new = (char *)malloc(sizeof(char) * (len + 1));
+		new = malloc(sizeof(char) * len + 1);
 	if (!new)
 		return (NULL);
-	while (i < len && i < ft_strlen(s) - start)
-	{
-		new[i] = s[start + i];
-		i++;
-	}  
+	i = 0;
+	while (s[start] != '\0' && len-- != 0)
+		new[i++] = s[start++];
 	new[i] = '\0';
 	return (new);
 }
